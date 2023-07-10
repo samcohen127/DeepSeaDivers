@@ -25,25 +25,25 @@ const server = app.listen(PORT, () => {
     console.log(`Server is up and running on port ${PORT}`)
 })
 
-// const io = socket(server, {
-//     cors: {
-//         origin: 'http://localhost:3000',
-//         methods: ['GET', 'POST'],
-//         allowedHeaders: ['*'],
-//         credentials: true,
-//     }
-// });
+const io = socket(server, {
+    cors: {
+        origin: 'http://localhost:3000',
+        methods: ['GET', 'POST'],
+        allowedHeaders: ['*'],
+        credentials: true,
+    }
+});
 
-// io.on("connection", (socket) => {
-//     console.log('Server side socket id: ' + socket.id);
+io.on("connection", (socket) => {
+    console.log('Server side socket id: ' + socket.id);
 
-//     socket.on('added_new_dive', (data) => {
-//         socket.broadcast.emit('added_dive', data);
-//     });
-//     socket.on('deleted_dive', (diveId) => {
-//         socket.broadcast.emit('dive_deleted', diveId);
-//     });
+    socket.on('added_new_dive', (data) => {
+        socket.broadcast.emit('added_dive', data);
+    });
+    socket.on('deleted_dive', (diveId) => {
+        socket.broadcast.emit('dive_deleted', diveId);
+    });
 
 
-// });
+});
 

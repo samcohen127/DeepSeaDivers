@@ -20,6 +20,10 @@ const DiveSchema = mongoose.Schema({
         type: String,
         required: [true, "Location is required"],
     },
+    diveLink: {
+        type: String,
+        required: [true, "Link is required"],
+    },
     
 }, { timestamps: true })
 
