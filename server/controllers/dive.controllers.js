@@ -1,4 +1,4 @@
-const Dive = require('../models/dives.model')
+const Dive = require('../models/dive.model')
 
 
 module.exports = {

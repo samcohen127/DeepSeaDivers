@@ -6,9 +6,8 @@ const EditForm = () => {
     const [name, setName] = useState('')
     const [type, setType] = useState('')
     const [description, setDescription] = useState('')
-    const [skill1, setSkill1] = useState('')
-    const [skill2, setSkill2] = useState('')
-    const [skill3, setSkill3] = useState('')
+    const [location, setLocation] = useState('')
+    const [diveLink, setDiveLink] = useState('')
     const [errors, setErrors] = useState({})
 
     const { id } = useParams()
@@ -18,9 +17,8 @@ const EditForm = () => {
                 setName(res.data.name)
                 setType(res.data.type)
                 setDescription(res.data.description)
-                setSkill1(res.data.skill1)
-                setSkill2(res.data.skill2)
-                setSkill3(res.data.skill3)
+                setLocation(res.data.location)
+                setDiveLink(res.data.divelink)
             }).catch((err) => {
                 console.log(err)
             })
@@ -34,9 +32,8 @@ const EditForm = () => {
             name,
             type,
             description,
-            skill1,
-            skill2,
-            skill3
+            location,
+            diveLink,
         }).then((res) => {
             console.log(res)
             navigate('/')
@@ -70,17 +67,14 @@ const EditForm = () => {
                 <br />
                 <br />
 
-                <p>Skills(optional): </p>
-                <label>Skill 1: </label>
-                <input type="text" className='form-control' onChange={(e) => setSkill1(e.target.value)} value={skill1} />
+                <label>Dive Location: </label>
+                <input type="text" className='form-control' onChange={(e) => setLocation(e.target.value)} value={location} />
+                {errors.description ? <span className='text-danger'>{errors.description.message}</span> : null}
                 <br />
 
-                <label>Skill 2: </label>
-                <input type="text" className='form-control' onChange={(e) => setSkill2(e.target.value)} value={skill2} />
-                <br />
-
-                <label>Skill 3:</label>
-                <input type="text" className='form-control' onChange={(e) => setSkill3(e.target.value)} value={skill3} />
+                <label>Dive Link: </label>
+                <input type="text" className='form-control' onChange={(e) => setDiveLink(e.target.value)} value={diveLink} />
+                {errors.description ? <span className='text-danger'>{errors.description.message}</span> : null}
                 <br />
 
                 <button className='btn btn-secondary mt-3'>Update Dive!</button>

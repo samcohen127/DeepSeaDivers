@@ -43,10 +43,8 @@ const DiveDetails = () => {
                 <h2>{dive.name}</h2>
                 <p>Type: {dive.type}</p>
                 <p>Description: {dive.description}</p>
-                <p>Skills: </p>
-                {dive.skill1 !== '' ? <p>{dive.skill1}</p> : null}
-                {dive.skill2 !== '' ? <p>{dive.skill2}</p> : null}
-                {dive.skill3 !== '' ? <p>{dive.skill3}</p> : null}
+                <p>Location: {dive.location}</p>
+                <p>Link: {dive.diveLink}</p>
             </div>
             <button className='btn btn-danger mt-3' onClick={(e) => deleteHandler(dive._id)}>Adopt {dive.name}!</button>
 
