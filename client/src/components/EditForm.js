@@ -18,7 +18,7 @@ const EditForm = () => {
                 setType(res.data.type)
                 setDescription(res.data.description)
                 setLocation(res.data.location)
-                setDiveLink(res.data.divelink)
+                setDiveLink(res.data.diveLink)
             }).catch((err) => {
                 console.log(err)
             })

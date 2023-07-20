@@ -7,7 +7,7 @@ import DiveDetails from './components/DiveDetails';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App " >
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<DiveList />} />

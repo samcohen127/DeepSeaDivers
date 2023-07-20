@@ -56,7 +56,7 @@ const Form = () => {
                 {errors.description ? <span className='text-danger'>{errors.description.message}</span> : null}
                 <br />
 
-                <label>Dive Locaiton: </label>
+                <label>Dive Location: </label>
                 <input type="text" className='form-control' onChange={(e) => setLocation(e.target.value)} value={location} />
                 {errors.description ? <span className='text-danger'>{errors.description.message}</span> : null}
                 <br />
@@ -66,7 +66,7 @@ const Form = () => {
                 {errors.description ? <span className='text-danger'>{errors.description.message}</span> : null}
                 <br />
 
-                <button className='btn btn-secondary mt-3'>Add Dive!</button>
+                <button className='btn btn-secondary mt-3 text-info'>Add Dive!</button>
             </form>
         </div>
     )
